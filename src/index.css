@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System - Dinithi Bandaranayake
+Clean white base with cyan accents and sophisticated typography
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 3% 92%; /* Soft Silver Gray */
+    --foreground: 0 0% 13%; /* Charcoal Black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 229 57% 17%; /* Midnight Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 286 50% 30%; /* Royal Purple */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 3% 92%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 187 100% 42%; /* Turquoise */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 85%;
+    --input: 240 6% 85%;
+    --ring: 229 57% 17%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio-specific design tokens */
+    --portfolio-midnight: 229 57% 17%;
+    --portfolio-purple: 286 50% 30%;
+    --portfolio-silver: 240 3% 92%;
+    --portfolio-charcoal: 0 0% 13%;
+    --portfolio-turquoise: 187 100% 42%;
+    
+    /* Gradients */
+    --gradient-professional: linear-gradient(135deg, hsl(286 50% 30%) 0%, hsl(187 100% 42%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 3% 95%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 12px hsl(229 57% 17% / 0.08);
+    --shadow-medium: 0 8px 24px hsl(229 57% 17% / 0.12);
+    --shadow-strong: 0 16px 48px hsl(229 57% 17% / 0.16);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 229 57% 12%; /* Darker Midnight Blue */
+    --foreground: 0 0% 95%;
+
+    --card: 229 57% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 229 57% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 187 100% 42%; /* Turquoise for dark mode */
+    --primary-foreground: 229 57% 12%;
+
+    --secondary: 286 50% 35%; /* Lighter Royal Purple */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 229 57% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 286 50% 45%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 229 57% 20%;
+    --input: 229 57% 20%;
+    --ring: 187 100% 42%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Portfolio Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-lg border border-border transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .btn-gradient {
+    background: var(--gradient-professional);
+    @apply text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 active:scale-95;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  /* Section Styles */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-24;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-6 text-primary;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed;
+  }
+  
+  /* Animation Classes */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .fade-in-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .skill-card {
+    @apply bg-card rounded-2xl p-8 border border-border transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-accent/30;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.08), hsl(var(--background)));
+  }
+  
+  /* Smooth scrolling for navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+}
