@@ -1089,3 +1089,16 @@ html {
         border: 1px solid var(--border);
     }
 }
+
+.project-image {
+    width: 100%;         /* Make container take full width of card */
+    height: 200px;       /* Set desired height for the image */
+    overflow: hidden;    /* Hide anything outside the container */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.project-img {
+    width: 100%;         /* Make image fill the container width */
+    height: 100%;        /* Make image fill the container height */
+    object-fit: cover;   /* Crop image to fit without distortion */
+}
