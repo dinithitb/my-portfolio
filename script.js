@@ -93,28 +93,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Download resume functionality
 function downloadResume() {
-    // In a real implementation, this would trigger a download
-    // For demo purposes, we'll just show a toast
-    showToast('Resume download would start here. Please add your actual PDF file!');
+   
     
-    // Example of how to implement actual download:
-    // const link = document.createElement('a');
-    // link.href = 'path/to/your/resume.pdf';
-    // link.download = 'Dinithi_Bandaranayake_Resume.pdf';
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
+   
+     const link = document.createElement('a');
+    link.href = 'assets/Dinithi_Resume.pdf';
+    link.download = 'Dinithi_Bandaranayake_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 // Project view functions
 function viewProject() {
     showToast('Project demo would open here. Add your project URL!');
-    // window.open('https://your-project-url.com', '_blank');
+    // window.open('https://my-project-url.com', '_blank');
 }
 
 function viewCode() {
     showToast('GitHub repository would open here. Add your GitHub URL!');
-    // window.open('https://github.com/your-username/thrift-thrive', '_blank');
+    // window.open('https://github.com/my-username/thrift-thrive', '_blank');
 }
 
 // Contact form handling
@@ -152,7 +150,6 @@ function handleFormSubmit(e) {
     // Reset form
     contactForm.reset();
     
-    // In a real implementation, you would send the data to a server:
     // fetch('/api/contact', {
     //     method: 'POST',
     //     headers: {
@@ -329,3 +326,5 @@ console.log(`
 This portfolio is built with pure HTML, CSS, and JavaScript.
 Feel free to reach out for collaboration opportunities!
 `);
+
+
