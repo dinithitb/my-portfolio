@@ -102,7 +102,7 @@ function downloadResume() {
 }
 
 // Project view functions
-function viewProject() {
+/*function viewProject() {
     //showToast('Project demo would open here. Add your project URL!');
     // window.open('https://my-project-url.com', '_blank');
 }
@@ -110,7 +110,7 @@ function viewProject() {
 function viewCode() {
     //showToast('GitHub repository would open here. Add your GitHub URL!');
     // window.open('https://github.com/my-username/thrift-thrive', '_blank');
-}
+}*/
 
 // Contact form handling
 if (contactForm) {
