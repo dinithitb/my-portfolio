@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Download resume functionality
 function downloadResume() {
     const link = document.createElement("a");
-    link.href = "assets/Dinithi_Resume.pdf";
+    link.href = "src/assets/Dinithi_Resume.pdf";
     link.download = "Dinithi_Bandaranayake_Resume.pdf";
     document.body.appendChild(link);
     link.click();
