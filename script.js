@@ -103,12 +103,12 @@ function downloadResume() {
 
 // Project view functions
 function viewProject() {
-    showToast('Project demo would open here. Add your project URL!');
+    //showToast('Project demo would open here. Add your project URL!');
     // window.open('https://my-project-url.com', '_blank');
 }
 
 function viewCode() {
-    showToast('GitHub repository would open here. Add your GitHub URL!');
+    //showToast('GitHub repository would open here. Add your GitHub URL!');
     // window.open('https://github.com/my-username/thrift-thrive', '_blank');
 }
 
@@ -323,5 +323,19 @@ console.log(`
 This portfolio is built with pure HTML, CSS, and JavaScript.
 Feel free to reach out for collaboration opportunities!
 `);
+
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '🌞' : '🌙';
+}
+
+
+
+
 
 
